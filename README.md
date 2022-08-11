@@ -1,4 +1,4 @@
-#【WIP】 web-challenge
+# 【WIP】 web-challenge
 
 ## 第一周
 1. 思考回答如下代码从函数开始执行到页面上渲染 dom 大体上都经过了哪些步骤?
