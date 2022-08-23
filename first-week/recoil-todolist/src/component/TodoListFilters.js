@@ -1,6 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { todoListFilterState } from "../recoil_state";
+import { Show } from "../constants.ts";
 
 function TodoListFilters() {
   const [filter, setFilter] = useRecoilState(todoListFilterState);
@@ -12,9 +13,9 @@ function TodoListFilters() {
     <>
       Filter:
       <select value={filter} onChange={updateFilter}>
-        <option value="Show All">All</option>
-        <option value="Show Completed">Completed</option>
-        <option value="Show Uncompleted">Uncompleted</option>
+        <option value={Show.All}>All</option>
+        <option value={Show.Completed}>Completed</option>
+        <option value={Show.Uncompleted}>Uncompleted</option>
       </select>
       <p></p>
     </>
