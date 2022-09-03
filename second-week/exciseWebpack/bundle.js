@@ -60,6 +60,7 @@ function createAsset(filename) {
   //   遍历当前AST
   traverse(ast, {
     ImportDeclaration: ({ node }) => {
+      //   console.log(node);
       // 把当前依赖的模块加入到数组中，这个存储的是字符串
       // 例如 如果当前js文件 有一句 import message from './message.js'，
       // './message.js' === node.source.value
@@ -91,7 +92,7 @@ function creatGraph(entry) {
   for (const asset of queue) {
     const dirname = path.dirname(asset.filename); // ./originFile
     // 新增一个属性来保存子依赖项的数据
-    // 保存莱斯 这样的数据结构 ---> {"./message.js": 1};
+    // 保存 数据结构 ---> {"./message.js": 1};
     asset.mapping = {}; // 映射
     asset.dependencies.forEach((relativePath) => {
       const absolutePath = path.join(dirname, relativePath);

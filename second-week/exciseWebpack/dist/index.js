@@ -11,7 +11,7 @@
     fn(localRequire, module, module.exports);
     return module.exports;
   }
-  //执行入口文件，
+  //执行入口文件，m
   require(0);
 })({
   0: [
